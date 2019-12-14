@@ -15,3 +15,7 @@ git add (not dot, only the files you need pushed)
 git commit -m "whatever" 
 
 git push
+
+i am git statusing
+
+maybe this works
