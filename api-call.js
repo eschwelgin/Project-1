@@ -1,19 +1,16 @@
-// sandbox url https://sandbox-api.brewerydb.com/v2/
-// Key:b04f7e596969ab2a01ec840dc8a0d9c0
-
-// have to use a cors proxy to prevent cross-origin errors 
-// https://cors-anywhere.herokuapp.com/
-var styleId = 93 //range is 93-164
-var testbeerURL = 'https://cors-anywhere.herokuapp.com/sandbox-api.brewerydb.com/v2/beers?styleId=' + styleId + '&key=b04f7e596969ab2a01ec840dc8a0d9c0&withBreweries=Y'
-
-var userLat 
-var userLng 
-var testBrewURL = 'https://cors-anywhere.herokuapp.com/sandbox-api.brewerydb.com/v2/search/geo/point?lat=34.0522&lng=-118.2436&radius=100&key=b04f7e596969ab2a01ec840dc8a0d9c0' // LA, Cali
+var userLat
+var userLng
 
 function brewCall() {
-  brewURL = 'https://cors-anywhere.herokuapp.com/sandbox-api.brewerydb.com/v2//search/geo/point?lat=' + userLat + '&lng=' + userLng + '&key=b04f7e596969ab2a01ec840dc8a0d9c0'
+  // brewURL = 'https://cors-anywhere.herokuapp.com/sandbox-api.brewerydb.com/v2/search/geo/point?lat=' + userLat + '&lng=' + userLng + '&radius=100&key=b04f7e596969ab2a01ec840dc8a0d9c0'
+  //sub the test variable in the ajax call to get data back - I don't think the sandbox includes any cleveland breweries 
+  // test1 = 'https://cors-anywhere.herokuapp.com/sandbox-api.brewerydb.com/v2/breweries?&key=b04f7e596969ab2a01ec840dc8a0d9c0'
+  // test2 = "https://cors-anywhere.herokuapp.com/sandbox-api.brewerydb.com/v2/search/geo/point?lat=35.772096&lng=-78.638614&key=b04f7e596969ab2a01ec840dc8a0d9c0"
+
+  brewURL = "https://api.openbrewerydb.org/breweries?by_city=cleveland"
+  
   $.ajax({
-    url: testBrewURL,
+    url: brewURL,
     method: "GET",
   }).then(function(response) {
     console.log(response)
@@ -22,8 +19,8 @@ function brewCall() {
 
 function success(pos) {
   var crd = pos.coords
-  console.log('Latitude : ' + crd.latitude)
-  console.log('Longitude: ' + crd.longitude)
+  console.log('Lat:   ' + crd.latitude)
+  console.log('Long: ' + crd.longitude)
   userLat = crd.latitude 
   userLng = crd.longitude
   brewCall()
