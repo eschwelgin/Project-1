@@ -38,6 +38,38 @@ breweryInit()
 console.log("click")
 })
 
+const yesBtn = document.querySelector('#yesBtn')
+const cardContainer2 = document.querySelector('#card-container2')
+const cardBody = document.querySelector('#card-body')
+const mainImg = document.querySelector('#main-img')
+const address = document.querySelector('#address')
+const yesCity = document.querySelector('#yes-city')
+const yesState = document.querySelector('#yes-state')
+const cardTitle2 = document.querySelector('#card-title2')
+const message = document.querySelector('#message')
+
+
+// yesBtn.addEventListener('click', yesButton)
+
+// function yesButton () {
+//     //  alert("Let's go get some beer!")
+
+//     yesBtnContainer.classList.remove('hide')
+// }
+
+yesBtn.addEventListener('click', function() {
+        cardBody.classList.add('hide')
+        // mainImg.classList.add('hide')
+        // cardContainer2.classList.remove('hide')
+        // address.classList.remove('hide')
+
+        message.textContent = 'Address of selected brewery! : '
+        address.textContent = results[i].street
+        yesCity.textContent = results[i].city
+        yesState.textContent = results[i].state
+        cardTitle2.textContent = results[i].name
+})
+
 
 const searchBtn = document.querySelector('#search-btn')
 
@@ -54,5 +86,8 @@ searchBtn.addEventListener('click', function () {
 
     
 })
+
+
+
 
 
