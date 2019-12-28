@@ -11,7 +11,7 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    height: 500px;
+    height: 550px;
     width: 400px;
     margin-bottom: 30px;
 }
@@ -33,7 +33,33 @@ body {
     margin-bottom: 20px;
 }
 
+.hide {
+    display: none;
+}
 
+/* .card-container2 {
+    margin-bottom: 20px;
+    
+} */
+
+.message {
+    margin: 10px;
+    font-weight: 800;
+}
+.card-title2 {
+    margin: 10px;
+}
+.address {
+    margin: 10px;
+}
+.yes-ciy {
+    margin: 10px;
+}
+
+.yes-state {
+    margin: 10px;
+   
+}
 
 
 
