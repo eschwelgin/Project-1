@@ -51,7 +51,7 @@ function brewGoog() {
     url: googURL0,
     method: "GET",
   }).then(function(response) {
-    console.log(response)
+    console.log("Photo ID = ", response)
     if (response.status === "ZERO_RESULTS" || response.candidates[0].photos === undefined) {
       console.log("recovered for image error")
       i++
@@ -82,7 +82,7 @@ function brewCall() {
     method: "GET",
   }).then(function(response) {
     brewArray = response
-    console.log(brewArray)
+    console.log("Brewery Search Results by Zip = ", brewArray)
     // console.log(brewName)
     breweryCount = brewArray.length
     if (breweryCount === 0 ) { //----------------------------------------
@@ -125,7 +125,7 @@ function postCall() {
       }
 
     // userPost = response.results[0].address_components[6].short_name
-    console.log(userPost)
+    console.log("User Post = " + userPost)
     brewCall() 
     postCallExtra()
   });
@@ -133,8 +133,8 @@ function postCall() {
 
 function success(pos) {
   var crd = pos.coords
-  console.log('Lat:   ' + crd.latitude)
-  console.log('Long: ' + crd.longitude)
+  console.log('User Lat  = ' + crd.latitude)
+  console.log('User Long =' + crd.longitude)
   userLat = crd.latitude 
   userLng = crd.longitude
   postCall() 
@@ -156,6 +156,7 @@ function searchBrewery () {
       return result.json()
   }).then(result => {
     brewArray = result
+    console.log("Brewery Search Results by City = ", brewArray)
       brewGoog()
   })
 }
