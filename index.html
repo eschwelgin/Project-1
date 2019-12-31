@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Where's the Beer?</title>
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
@@ -27,15 +28,32 @@
 <!-- <div class="cards-container"> -->
     <div class="card card-container">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtsGXfptiQNR6BL9c9gHmx0EB4hZXE1juMSxylxLARaegWuqly&s" id="main-img" class="card-img-top" alt="...">
-      <div class="card-body">
+      <div id="card-body" class="card-body">
         <h5 id="card-title" class="card-title"></h5>
         <p id="card-text" class="card-text"></p>
         <p id="card-text2"></p>
         <p id="card-text3"></p>
         <button type="button" id="noBtn" class="btn btn-primary">No</button>
         <button type="button" id="yesBtn" class="btn btn-primary">Yes</button>
+
+
+        
+
       </div>
+
+      <div id="card-container2" class="card-container2">
+        <div id="message" class="message"></div>
+        <div id="card-title2" class="card-title2"></div>
+          <div id="address" class="address"></div>
+          <div id="yes-city" class="yes-city"></div>
+          <div id="yes-state" class="yes-state"></div>
+           
+         
+        </div>
     </div>
+
+
+   
 <!-- </div> -->
 
    <!-- <div class="carousel-inner">
@@ -64,6 +82,10 @@
       <button type="button" class="no-btn">No</button>
       <button type="button" class="yes-btn">Yes</button>
     </div>  -->
-    <script src="script2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/kyanite@latest/dist/kyanite.js"></script>
+    <script src="api-call.js"></script>
+    
+    <!-- <script src="script2.js"></script> -->
+
 </body>
 </html>
