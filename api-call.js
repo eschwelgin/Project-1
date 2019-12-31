@@ -1,5 +1,6 @@
 var userLat
 var userLng
+var userPost // added ----------------------------------------------------------------
 var brewName = ""
 var photoID = ""
 var i = 0
@@ -32,9 +33,9 @@ function setData() {
   const cardText2 = document.querySelector('#card-text2')
   const cardText3 = document.querySelector('#card-text3')
 
-  cardTitle.textContent = brewArray[i].name
-  cardText.textContent = brewArray[i].street
-  cardText2.textContent = brewArray[i].city
+  // cardTitle.textContent = brewArray[i].name
+  // cardText.textContent = brewArray[i].street
+  // cardText2.textContent = brewArray[i].city
   cardText3.textContent = brewArray[i].state
 }
 
@@ -65,7 +66,9 @@ function brewGoog() {
 }
 
 function brewCall() {
-  brewURL = "https://api.openbrewerydb.org/breweries?by_city=cleveland"
+  brewURL = "https://api.openbrewerydb.org/breweries?by_postal=" + userPost // changed url ----------------
+  // brewURL = "https://api.openbrewerydb.org/breweries?by_city=cleveland" // changed url ----------------
+  // brewURL = "https://api.openbrewerydb.org/breweries?by_postal=" + "44106" // changed url ----------------
 
   $.ajax({
     url: brewURL,
@@ -74,8 +77,20 @@ function brewCall() {
     brewArray = response
     console.log(brewArray)
     // console.log(brewName)
-    brewGoog()
+    brewGoog() // downstream functions stay the same 
 
+  });
+}
+
+function postCall() { // added fn -------------------------------------
+  $.ajax({
+    url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + userLat + ',' + userLng + '&key=AIzaSyDIEVzD85LZ_BWwmWAD2qPxTiUNGgA28YI',
+    method: "GET",
+  }).then(function(response) {
+    console.log(response)
+    userPost = response.results[0].address_components[6].short_name
+    console.log(userPost)
+    brewCall() // switch which fn it calls ------------------------------
   });
 }
 
@@ -85,7 +100,7 @@ function success(pos) {
   console.log('Long: ' + crd.longitude)
   userLat = crd.latitude 
   userLng = crd.longitude
-  brewCall()
+  postCall() // switch which fn it calls ----------------------------------
 }
 
 function error(err) {
