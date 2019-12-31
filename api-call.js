@@ -20,7 +20,8 @@ const yesCity = document.querySelector('#yes-city')
 const yesState = document.querySelector('#yes-state')
 const cardTitle2 = document.querySelector('#card-title2')
 const message = document.querySelector('#message')
-const noBtn = document.querySelector('#noBtn')
+const noBtn0 = document.querySelector('#noBtn0')
+const noBtn1 = document.querySelector('#noBtn1')
 let userCity = document.querySelector('#search-city').value
 let userState = document.querySelector('#search-state').value
 let results
@@ -145,6 +146,8 @@ function error(err) {
 
 window.addEventListener("load", function () {
   navigator.geolocation.getCurrentPosition(success, error)
+  noBtn0.style.display="inline-block"
+  noBtn1.style.display="none"
 })
 
 function searchBrewery () {
@@ -161,6 +164,9 @@ searchBtn.addEventListener('click', function () {
   // console.log(userCity)
   userCity = document.querySelector('#search-city').value
   userState = document.querySelector('#search-state').value
+  noBtn0.style.display="none"
+  noBtn1.style.display="inline-block"
+
   searchBrewery()
 
 })
@@ -176,7 +182,7 @@ yesBtn.addEventListener('click', function() {
 
 })
 
-noBtn.addEventListener('click', function() {
+noBtn0.addEventListener('click', function() {
   i++
   if ( i < breweryCount ) {
     brewGoog()
@@ -184,4 +190,9 @@ noBtn.addEventListener('click', function() {
     i = 0
     brewCallExtra()
   }
+})
+
+noBtn1.addEventListener('click', function() {
+  i++
+  brewGoog()
 })
