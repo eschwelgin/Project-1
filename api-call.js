@@ -168,10 +168,12 @@ searchBtn.addEventListener('click', function () {
 yesBtn.addEventListener('click', function() {
   cardBody.classList.add('hide')
   message.textContent = 'Address of selected brewery! : '
-  address.textContent = results[i].street
-  yesCity.textContent = results[i].city
-  yesState.textContent = results[i].state
-  cardTitle2.textContent = results[i].name
+
+  address.textContent = brewArray[i].street
+  yesCity.textContent = brewArray[i].city
+  yesState.textContent = brewArray[i].state
+  cardTitle2.textContent = brewArray[i].name
+
 })
 
 noBtn.addEventListener('click', function() {
@@ -182,7 +184,4 @@ noBtn.addEventListener('click', function() {
     i = 0
     brewCallExtra()
   }
-
-  })
-
 
