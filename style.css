@@ -1,0 +1,53 @@
+.jumbotron {
+    background-image: url('../Project-1/images/beer-background-realistic-bubbles-cool-260nw-1143666473.jpg.webp');
+    border-bottom: 3px solid black;
+}
+.display-4 {  
+    text-align: center;
+}
+
+
+.card {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 550px;
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+
+body {
+    background: #ffcc00;
+   
+}
+
+.btn {
+    height: 50px;
+    width: 50px;
+    margin: 40px 15px;
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
