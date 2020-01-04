@@ -190,6 +190,9 @@ noBtn0.addEventListener('click', function() {
   } else if ( i === breweryCount) {  //|| breweryCount === 0  
     i = 0
     brewCallExtra()
+  } else {
+    i = 0
+    brewCallExtra()
   }
 })
 
