@@ -1,57 +1,38 @@
-.jumbotron {
-    background-image: url('../Project-1/images/beer-background-realistic-bubbles-cool-260nw-1143666473.jpg.webp');
-    border-bottom: 3px solid black;
-}
-.display-4 {  
+h1 {
     text-align: center;
 }
-
-
-.card {
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
+.green {
+    color: green;
+}
+.big {
+    font-size: larger;
+}
+.tiny{
+    font-size: smaller;
+}
+.center {
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    height: 550px;
-    width: 400px;
-    margin-bottom: 30px;
 }
-
-
-body {
-    background: #ffcc00;
-   
+.bold {
+    font-weight: bold;
 }
-
-.btn {
-    height: 50px;
-    width: 50px;
-    margin: 40px 15px;
+.font {
+    font-family: Arial, Helvetica, sans-serif;
 }
-
-.search-container {
-    text-align: center;
-    margin-bottom: 20px;
+.multiple {
+    font-size: large;
+    color: orange;
+    font-weight: bold;
 }
-
-.hide {
-    display: none;
+.styledFont {
+    font-style: italic;
 }
-
-.message {
-    font-weight: 800;
+#styledImage {
+    border: 10px dotted purple;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
