@@ -1,20 +1,20 @@
-var userLat
-var userLng
-var userPost 
-var userPostExtra
-var userPostExtra0
-var brewName = ""
-var photoID = ""
-var i = 0
-var j = 0
-var brewArray
-var breweryCount = 1
+let userLat
+let userLng
+let userPost 
+let userPostExtra
+let userPostExtra0
+let brewName = ""
+let photoID = ""
+let i = 0
+let j = 0
+let brewArray
+let breweryCount = 1
 const searchBtn = document.querySelector('#search-btn')
 const yesBtn = document.querySelector('#yesBtn')
 const cardContainer2 = document.querySelector('#card-container2')
 const cardBody = document.querySelector('#card-body')
 // const mainImg = document.querySelector('#main-img')
-var mainImg = $("#main-img")
+const mainImg = $("#main-img")
 const address = document.querySelector('#address')
 const yesCity = document.querySelector('#yes-city')
 const yesState = document.querySelector('#yes-state')
@@ -41,11 +41,9 @@ function setData() {
 }
 
 function brewGoog() {
-    brewName = brewArray[i].name
-
-  // testGoogURL0 = 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=' + brewName + '&inputtype=textquery&fields=photo&key=AIzaSyCARpB8hXKo9eg9ffJNB4CZHM7pM3kTqrg'
+  brewName = brewArray[i].name
+  // console.log(brewName)
   googURL0 = 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=' + brewName + '&inputtype=textquery&fields=photo&key=AIzaSyCARpB8hXKo9eg9ffJNB4CZHM7pM3kTqrg'
-  // testGoogURL1 = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=CmRaAAAAw1AiqtnSdvjaSrmcwulcoSXtFEr3o5TQZMP2nVJirGyqmh1hHbldHX0LiVotdlymEgyAmPkOtofeNGuKqutn3TBkXkHNHwnoQgjsS7n2OtauzgP5o1CB8I6M2chvORFwEhBSObZmoQa0Nex_oKeW6xsTGhTn9WCDOlF4trANe9yaOwDCCGElWA&key=AIzaSyCARpB8hXKo9eg9ffJNB4CZHM7pM3kTqrg"
 
   $.ajax({
     url: googURL0,
@@ -54,17 +52,12 @@ function brewGoog() {
     console.log("Photo ID = ", response)
     if (response.status === "ZERO_RESULTS" || response.candidates[0].photos === undefined) {
       console.log("recovered for image error")
-      i++
-      brewGoog()
+      noBtnFn()
     } else {
       photoID = response.candidates[0].photos[0].photo_reference
-      // console.log("no error to handle")
       setData()
     }
-    // console.log(photoID)
-    // setData()
   });
-
 }
 
 function brewCallExtra() {
@@ -75,7 +68,6 @@ function brewCallExtra() {
 
 function brewCall() {
   brewURL = "https://api.openbrewerydb.org/breweries?by_postal=" + userPost 
-  // brewURL = "https://api.openbrewerydb.org/breweries?by_postal=" + "44106" 
 
   $.ajax({
     url: brewURL,
@@ -85,11 +77,11 @@ function brewCall() {
     console.log("Brewery Search Results by Zip = ", brewArray)
     // console.log(brewName)
     breweryCount = brewArray.length
-    if (breweryCount === 0 ) { //----------------------------------------
+    if (breweryCount === 0 ) { 
       brewCallExtra()
       console.log("No breweries in selected postal code.. moving forward")
     } else {
-    brewGoog() 
+      brewGoog() 
     }
   });
 }
@@ -123,8 +115,6 @@ function postCall() {
       } else {
         console.log("Error gps --> postal failure")
       }
-
-    // userPost = response.results[0].address_components[6].short_name
     console.log("User Post = " + userPost)
     brewCall() 
     postCallExtra()
@@ -167,9 +157,7 @@ searchBtn.addEventListener('click', function () {
   userState = document.querySelector('#search-state').value
   noBtn0.style.display="none"
   noBtn1.style.display="inline-block"
-
   searchBrewery()
-
 })
 
 yesBtn.addEventListener('click', function() {
@@ -183,17 +171,23 @@ yesBtn.addEventListener('click', function() {
 
 })
 
-noBtn0.addEventListener('click', function() {
+function noBtnFn() {
   i++
   if ( i < breweryCount ) {
     brewGoog()
-  } else if ( i === breweryCount) {  //|| breweryCount === 0  
+  } else if ( i === breweryCount) {  
     i = 0
     brewCallExtra()
-  } else {
-    i = 0
-    brewCallExtra()
-  }
+  } 
+  // else {
+  //   i = 0
+  //   console.log("i count invalid.. recovering")
+  //   noBtnFn()
+  // }
+}
+
+noBtn0.addEventListener('click', function() {
+  noBtnFn()
 })
 
 noBtn1.addEventListener('click', function() {
