@@ -59,7 +59,7 @@
 
 body {
     /* background: #ffcc00; */
-    background-image: url('../dev/images/skinny.jpg');
+    background-image: url('images/skinny.jpg');
     background-size: 100%;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
