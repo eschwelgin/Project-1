@@ -1,38 +1,225 @@
-h1 {
+.jumbotron {
+    /* background-image: url('../Project-1/images/beer-background-realistic-bubbles-cool-260nw-1143666473.jpg.webp'); */
+    /* border-bottom: 3px solid black; */
+    object-fit: cover;
+    background-size: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.display-4 {  
     text-align: center;
+    font-family: righteous;
 }
-.red {
-    color: red;
+
+.search-control {
+    color: black;
+    background-color: rgba(211,211,211,0.5);
+    border: 1px solid black;
+    font-weight: bolder;
 }
-.blue {
-    color: blue;
+
+
+::placeholder {
+    color: black;
+    opacity: 1.0;
 }
-.green {
-    color: green;
+/* .card-body {
+    overflow: auto;
+    background-color: black;
+    height: 100%;
+    
+} */
+
+.card-container2 {
+    background-color: black;
 }
-.big {
-    font-size: larger;
+.card-container {
+    margin-bottom: 10%;
 }
-.tiny{
-    font-size: smaller;
-}
-.center {
+
+.card {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
+    width: 32%;
+    background-color: black;
+    
 }
-.bold {
-    font-weight: bold;
+
+.card-title {
+    color: #ffcc00;
+    margin-bottom: 3%;
 }
-.font {
-    font-family: Arial, Helvetica, sans-serif;
+
+
+body {
+    /* background: #ffcc00; */
+    background-image: url('../Project-1/images/skinny.jpg');
+    background-size: 100%;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+   
 }
-.multiple {
+
+.btn {
+    height: 35%;
+    width: 25%;
+    /* background-color: black; */
+    border: none;
+    color: black;
+    font-weight: 700;
+    background-image: linear-gradient(to top, #ffcc00, #DA852C, #9C4D34, #DA852C, #ffcc00);
+    /* background: rgb(255,204,0); */
+    /* background: linear-gradient(122deg, rgba(255,204,0,1) 0%, rgba(168,168,189,1) 80%, rgba(168,168,189,1) 20%, rgba(255,204,0,1) 100%); */
+    /* background: #000000;
+
+background: -webkit-radial-gradient(center, #000000, #7BA8A4);
+
+background: -moz-radial-gradient(center, #000000, #7BA8A4);
+
+background: radial-gradient(ellipse at center, #000000, #7BA8A4); */
+
+
+
+
+
+/* background: #A6BDDB; 
+background: -moz-linear-gradient(top, #A6BDDB
+ 0%, #000000
+ 14%, #000000
+ 86%, #7DB9E8
+ 100%); 
+background: -webkit-linear-gradient(top, #A6BDDB
+ 0%,#000000
+ 14%,#000000
+ 86%,#7DB9E8
+ 100%); 
+background: linear-gradient(to bottom, #A6BDDB
+ 0%,#000000
+ 14%,#000000
+ 86%,#7DB9E8
+ 100%); */
+
+
+
+}
+.btn:hover {
+    background-color: #ffcc00;
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.hide {
+    display: none;
+}
+
+.message {
+    font-weight: 900;
+    margin-top: 3.5%;
+    margin-bottom: 5%;
+    color: #ffcc00;
+}
+
+.card-title2 {
+    margin-bottom: 3%;
+    font-weight: 700;
     font-size: large;
-    color: orange;
-    font-weight: bold;
+    color: #ffcc00;
+    
 }
-.styledFont {
-    font-style: italic;
+
+.address {
+    margin-bottom: 3%;
+    color: #ffcc00;
 }
-#styledImage {
-    border: 10px dotted purple;
+
+.yes-city {
+    margin-bottom: 3%;
+    color: #ffcc00;
 }
+
+.yes-state {
+    color: #ffcc00;
+}
+
+
+
+
+@media only screen and (min-width: 320px) {
+    .card-container {
+        width: 75%;
+    }
+    body {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+  .card-container {
+      width: 65%;
+  }
+  body {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+     
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .card-container {
+      width: 55%;
+  }
+  body {
+      width: 100%;
+      height: 100%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+   .card-container {
+       width: 45%;
+   }
+   body {
+       width: 100%;
+       height: 100%;
+   }
+}
+
+@media only screen and (min-width: 1200px) {
+ .card-container {
+     width: 35%;
+ }
+ body {
+     width: 100%;
+     height: 100%;
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
