@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
@@ -20,22 +21,21 @@
 
     <div id="search-container" class="search-container">
       <input class="search-control" type="text" placeholder="Enter City Name" id="search-city">
-      <input type="text" placeholder="Enter State" id="search-state">
-      <button class="search-control" id="search-btn">Search</button>
+      <input class="search-control" type="text" placeholder="Enter State" id="search-state">
+      <button class="search-control search-btn" id="search-btn">Search</button>
     </div>
 
 
 <!-- <div class="cards-container"> -->
     <div class="card card-container">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtsGXfptiQNR6BL9c9gHmx0EB4hZXE1juMSxylxLARaegWuqly&s" id="main-img" class="card-img-top" alt="...">
+      <img src="https://thisisclevelandprodcdn.azureedge.net/w-700-mode-crop-scale-both-quality-75-cache-1-0/ThisIsCleveland/media/Listings/Great-Lakes-Brewing-Company-tour.jpg" id="main-img" class="card-img-top" alt="...">
       <div id="card-body" class="card-body">
         <h5 id="card-title" class="card-title"></h5>
-        <p id="card-text" class="card-text"></p>
-        <p id="card-text2"></p>
-        <p id="card-text3"></p>
-        <button type="button" id="noBtn0" class="btn btn-primary">No</button>
-        <button type="button" id="noBtn1" class="btn btn-primary">No</button>
-        <button type="button" id="yesBtn" class="btn btn-primary">Yes</button>
+        <!-- <p id="card-text" class="card-text"></p> -->
+        <!-- <p id="card-text2"></p>
+        <p id="card-text3"></p> -->
+        <button type="button" id="noBtn" class="btn btn-primary">Next</button>
+        <button type="button" id="yesBtn" class="btn btn-primary yes-btn">Get Address</button>
 
 
         
@@ -85,7 +85,7 @@
     </div>  -->
     <script src="https://cdn.jsdelivr.net/npm/kyanite@latest/dist/kyanite.js"></script>
     <script src="api-call.js"></script>
-    
+
     <!-- <script src="script2.js"></script> -->
 
 </body>
