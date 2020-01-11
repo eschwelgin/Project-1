@@ -26,8 +26,8 @@ let userCity = document.querySelector('#search-city').value
 let userState = document.querySelector('#search-state').value
 let results
 
-function setData() {
-  var address = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + photoID + "&key=AIzaSyCARpB8hXKo9eg9ffJNB4CZHM7pM3kTqrg"
+function setData() {                                                                                              //please don't steal my key
+  var address = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + photoID + "&key=AIzaSyCmj71F1XA3hoYnJsTjY2uWeUmNnPlvaVU"
   mainImg.attr('src', address)
   const cardTitle = document.querySelector('#card-title')
   const cardText = document.querySelector('#card-text')
@@ -42,8 +42,8 @@ function setData() {
 
 function brewGoog() {
   brewName = brewArray[i].name
-  // console.log(brewName)
-  googURL0 = 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=' + brewName + '&inputtype=textquery&fields=photo&key=AIzaSyCARpB8hXKo9eg9ffJNB4CZHM7pM3kTqrg'
+  // console.log(brewName)                                                                                                                                                   //please don't steal my key
+  googURL0 = 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=' + brewName + '&inputtype=textquery&fields=photo&key=AIzaSyCmj71F1XA3hoYnJsTjY2uWeUmNnPlvaVU'
 
   $.ajax({
     url: googURL0,
@@ -88,7 +88,7 @@ function brewCall() {
 
 function postCallExtra() {
 
-  $.ajax({
+  $.ajax({                                                                    //please don't steal my key
     url: 'https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/baEsH9hL7FK1SV4U0FxXCKvmi9PGuRAzInS49MIH62kvnRw2XbX2T9dHdgV1aMAX/radius.json/' + userPost + '/50/mile',
     method: "GET",
   }).then(function(response) {
@@ -101,8 +101,8 @@ function postCallExtra() {
 }
 
 function postCall() { 
-  $.ajax({
-    url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + userLat + ',' + userLng + '&key=AIzaSyDIEVzD85LZ_BWwmWAD2qPxTiUNGgA28YI',
+  $.ajax({                                                                                          //please don't steal my key
+    url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + userLat + ',' + userLng + '&key=AIzaSyCmj71F1XA3hoYnJsTjY2uWeUmNnPlvaVU',
     method: "GET",
   }).then(function(response) {
     // console.log(response)
